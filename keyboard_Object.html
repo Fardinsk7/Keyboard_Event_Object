@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event Object </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Work+Sans:wght@300&display=swap');
+        *{
+            font-family: 'Work Sans', sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blueviolet;
+            height: 100vh;
+        }
+        .container{
+            color: white;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5rem;
+            width: 50%;
+            flex-direction: column;
+           
+        }
+        .container input[type="text"]{
+            font-size: 3rem;
+            padding: 10px 5px;
+            outline: none;
+            border: none;
+        }
+        .container h2{
+            color: white;
+        }
+        #ibox{
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: black;
+        }
+        #ibox2{
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>A function is triggered when you enter something inside this input area or presses a key</h2>
+        <input type="text" onkeypress="keypress()" onkeydown="keydown()" onkeyup="keyup()">
+        <p id ="ibox"></p>
+        <p id ="ibox2"></p>
+    </div>
+</body>
+<script>
+    function keypress(){
+        document.getElementById('ibox').innerHTML = `You press ${event.key} and it's code is ${event.code}`;
+    }
+    function keydown(){
+        document.getElementById('ibox2').innerHTML = "key is down";
+    }
+    function keyup(){
+        document.getElementById('ibox2').innerHTML = "key is up";
+    }
+</script>
+</html>
